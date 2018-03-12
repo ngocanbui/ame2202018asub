@@ -46,7 +46,9 @@ var goToSlide = function(n, d)
       $("#ssContainer .slide:nth-of-type(" + n + ")").stop().css({"margin-left": "100%"}).animate({"margin-left": "0%"}, d);
     }
     else {
-      
+      $("#ssContainer .slide").stop().animate({"margin-left": "100%"}, d);
+      $("#ssContainer .slide:nth-of-type(" + currentSlide + ")").stop().animate({"margin-left": "100%"}, d);
+      $("#ssContainer .slide:nth-of-type(" + n + ")").stop().css({"margin-left": "-100%"}).animate({"margin-left": "0%"}, d);
     }
   }
   

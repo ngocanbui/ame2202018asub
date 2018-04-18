@@ -1,0 +1,207 @@
+<html>
+
+<head>
+<style>
+button { 
+  background-color:white;
+  border-radius: 10px;
+  color: black; 
+  padding: 15px 50px; 
+  text-align: center; 
+  text-decoration: none; 
+  font-size: 15px; 
+  margin: 4px 2px; 
+  display:block; 
+  border-style: solid; 
+  border-color: darkgrey;
+  width: 246px; 
+  outline-color:blue;
+}
+
+#theListWraper
+  {
+    width: 250px;
+    float: left;
+    height: 100%;
+    background: white;
+	
+  }
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
+}
+@keyframes tada {
+  from {
+  
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  animation-name: tada;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+ .animateNow
+  {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+.red
+{
+	background: red;
+}
+.rect
+{
+	height: 300px;
+	width: 500px;
+	position: relative;
+	left: 200%;
+	bottom:200px;	
+}
+
+
+
+</style>
+<script>
+function doBounce(){
+  document.getElementById("testDiv").className = 'red rect';
+  setTimeout(function(){
+    document.getElementById("testDiv").className = 'red rect bounce animateNow';
+  }, 100);
+}
+function doFlash(){
+  document.getElementById("testDiv").className = 'red rect';
+  setTimeout(function(){
+    document.getElementById("testDiv").className = 'red rect flash animateNow';
+  }, 100);
+}
+function doTada(){
+  document.getElementById("testDiv").className = 'red rect';
+  setTimeout(function(){
+    document.getElementById("testDiv").className = 'red rect tada animateNow';
+  }, 100);
+}
+function dofadeIn(){
+  document.getElementById("testDiv").className = 'red rect';
+  setTimeout(function(){
+    document.getElementById("testDiv").className = 'red rect fadeIn animateNow';
+  }, 100);
+}
+function dofadeOut(){
+  document.getElementById("testDiv").className = 'red rect';
+  setTimeout(function(){
+    document.getElementById("testDiv").className = 'red rect fadeOut animateNow';
+  }, 100);
+}
+
+</script>
+</head>
+<body>
+  <div id='theListWraper'>
+    <h1> &nbsp; &nbsp; &nbsp; Animate.css <h1>
+  	<button onclick='doBounce()'>Bounce </button>
+  	<button onclick='doFlash()'>Flash</button>
+  	<button onclick='doTada()'>Tada </button>
+  	<button onclick='dofadeIn()'> fadeIn </button>
+  	<button onclick='dofadeOut()'>fadeOut</button>
+	
+	<div id="testDiv" class='red rect animateNow'> </div>
+     </div>
+  
+</body>
+
+</html>
